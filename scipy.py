@@ -1,0 +1,23 @@
+import numpy as np
+import cv2
+img=cv2.imread('corn.jpg',1)
+#gray=cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#cv2.imshow('grey',gray)
+#cv2.imshow('original',img)
+B,G,R=cv2.split(img)
+r,g,b=cv2.split(img)
+VARI=((G-R)/(G+R-B))
+vari=((g-r)/(g+r-b))
+#v=cv2.cvtColor(vari, cv2.COLOR_GRAY2RGB)
+#print(v.shape)
+#print(b)
+#print(g)
+#print(r)
+#v=((g-r)/(g+r-b))
+cv2.imshow('rgb',vari)
+cv2.imshow('bgr',VARI)
+#print(v)
+#cv2.imshow("vari",vari)
+cv2.waitKey()
+cv2.destroyAllWindows()
+
